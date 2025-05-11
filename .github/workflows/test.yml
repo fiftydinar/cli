@@ -101,7 +101,7 @@ jobs:
         with:
           install: true
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       # Setup repo and add caching
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -112,7 +112,7 @@ jobs:
           repository: ${{ inputs.repo }}
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -138,7 +138,7 @@ jobs:
           install-dir: /usr/bin
           use-sudo: true
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -148,7 +148,7 @@ jobs:
           repository: ${{ inputs.repo }}
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -183,7 +183,7 @@ jobs:
         with:
           install: true
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -193,7 +193,7 @@ jobs:
           repository: ${{ inputs.repo }}
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -222,7 +222,7 @@ jobs:
           install: true
 
       - name: Docker Login
-        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3.4.0
         if: inputs.repo == 'blue-build/cli'
         with:
           registry: ghcr.io
@@ -230,7 +230,7 @@ jobs:
           password: ${{ github.token }}
 
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       # Setup repo and add caching
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -242,7 +242,7 @@ jobs:
 
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -265,7 +265,7 @@ jobs:
 
       - uses: sigstore/cosign-installer@d7d6bc7722e3daa8354c50bcb52f4837da5e9b6a # v3.3.0
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       # Setup repo and add caching
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -277,7 +277,7 @@ jobs:
 
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -300,7 +300,7 @@ jobs:
 
       - uses: sigstore/cosign-installer@d7d6bc7722e3daa8354c50bcb52f4837da5e9b6a # v3.3.0
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       # Setup repo and add caching
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -312,7 +312,7 @@ jobs:
 
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -340,7 +340,7 @@ jobs:
         with:
           install: true
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -350,7 +350,7 @@ jobs:
           repository: ${{ inputs.repo }}
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
@@ -378,7 +378,7 @@ jobs:
         with:
           install: true
 
-      - uses: actions-rust-lang/setup-rust-toolchain@9399c7bb15d4c7d47b27263d024f0a4978346ba4 # v1.11.0
+      - uses: actions-rust-lang/setup-rust-toolchain@9d7e65c320fdb52dcd45ffaa68deb6c02c8754d9 # v1.12.0
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -388,7 +388,7 @@ jobs:
           repository: ${{ inputs.repo }}
 
 
-      - uses: extractions/setup-just@69d82fb0233557aec017ef13706851d0694e0f1d # v1
+      - uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v1
 
       - name: Run Build
         env:
