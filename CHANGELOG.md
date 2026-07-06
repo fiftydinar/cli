@@ -2,12 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.9.36] - 2026-07-06
+
+### Bug Fixes
+
+- Update rust-overlay to a more recent version in flake.lock (#745)
+- Change serde alias to rename (#751)
+- Clippy lints for new Rust version
+- Actually enable squash (#765)
+- Don't set layers when squash is set
+- Use 0700 permissions for all temporary directories (#766)
+- Allow container_image_reference to be optional (#764)
+- --pull=always, not --pull=true (#768)
+- Script module uses 'set -eu' in snippets
+
+### Features
+
+- Add environment variable expansion in top-level recipe fields (#749)
+- Recipe V2 (#789)
+- Support rechunking using Chunkah (#790)
+- Pull with retries before building (#809)
+
+### Miscellaneous Tasks
+
+- Bump cosign to 3.0.6 (#748)
+- Bump cosign to v3.1.1 (#805)
+- Put recipe-v2 behind a feature flag
+- Fix clippy lints
+
 ## [0.9.35] - 2026-03-30
 
 ### Bug Fixes
 
 - Remove tty_only for ConsoleAppender and use dumb-init correctly
 - Remove COPY for entrypoint.sh
+
+### Miscellaneous Tasks
+
+- Release
 
 ## [0.9.34] - 2026-03-29
 
