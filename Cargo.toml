@@ -31,7 +31,7 @@ reqwest = { version = "=0.12.28", default-features = false, features = ["rustls-
 rstest = "=0.26.1"
 semver = "=1.0.28"
 serde = { version = "=1.0.228", features = ["derive"] }
-serde_json = "=1.0.149"
+serde_json = "=1.0.150"
 serde_yaml = { version = "=0.10.4", package = "yaml_serde" }
 shadow-rs = { version = "=2.0.0", default-features = false }
 structstruck = "=0.5.1"
