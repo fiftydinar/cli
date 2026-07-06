@@ -2,7 +2,6 @@ use std::{
     collections::HashSet,
     path::Path,
     sync::{Arc, LazyLock},
-    time::Duration,
 };
 
 use blue_build_process_management::ASYNC_RUNTIME;
@@ -347,7 +346,7 @@ async fn cache_retrieve(uri: &Uri<String>) -> miette::Result<Value> {
         log::debug!("Retrieving schema from {}", uri.bold().italic());
         tokio::spawn(blue_build_utils::retry_async(
             3,
-            Duration::from_secs(2),
+            std::time::Duration::from_secs(2),
             async move || {
                 let response = client
                     .get(&*uri)
