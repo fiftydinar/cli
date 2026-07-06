@@ -83,7 +83,7 @@ clap_complete_nushell = "=4.6.0"
 fuzzy-matcher = "=0.3.7"
 jsonschema = "=0.30.0"
 open = "=5.3.6"
-os_info = "=3.12.0"
+os_info = "=3.15.0"
 requestty = { version = "=0.6.3", features = ["macros", "termion"] }
 rust-embed = { version = "=8.11.0", features = ["debug-embed", "compression", "deterministic-timestamps"] }
 thiserror = "=2.0.18"
