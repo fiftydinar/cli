@@ -11,7 +11,7 @@ use blue_build_utils::{
     platform::Platform,
     secret::Secret,
 };
-use cached::proc_macro::cached;
+use cached::cached;
 use log::{debug, trace, warn};
 use miette::{Context, IntoDiagnostic, Result};
 use oci_client::Reference;
@@ -180,7 +180,7 @@ impl Recipe {
     /// Errors when a yaml file cannot be deserialized,
     /// or a linked module yaml file does not exist.
     pub fn parse<P: AsRef<Path>>(path: P) -> Result<Self> {
-        #[cached(result = true, key = "PathBuf", convert = r"{ path.into() }")]
+        #[cached(key = "PathBuf", convert = r"{ path.into() }")]
         fn inner(path: &Path) -> Result<Recipe> {
             trace!("Recipe::parse({})", path.display());
 

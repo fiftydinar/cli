@@ -5,7 +5,7 @@ use std::{
     path::PathBuf,
 };
 
-use cached::proc_macro::cached;
+use cached::cached;
 use comlexr::cmd;
 use miette::{Context, IntoDiagnostic, Result, bail};
 use serde::{Deserialize, Serialize};

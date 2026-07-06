@@ -10,7 +10,7 @@ use blue_build_utils::constants::{
     CUSTOM_MODULE_SCHEMA, IMPORT_MODULE_SCHEMA, JSON_SCHEMA, STAGE_SCHEMA,
 };
 use bon::bon;
-use cached::proc_macro::cached;
+use cached::cached;
 use colored::Colorize;
 use indexmap::IndexMap;
 use jsonschema::{BasicOutput, Retrieve, Uri, ValidationError, Validator};
@@ -321,7 +321,6 @@ impl Retrieve for ModuleSchemaRetriever {
 }
 
 #[cached(
-    result = true,
     key = "String",
     convert = r#"{ format!("{uri}") }"#,
     sync_writes = "by_key"
@@ -380,14 +379,17 @@ async fn cache_retrieve(uri: &Uri<String>) -> miette::Result<Value> {
             _ => unreachable!(),
         };
 
-        serde_json::from_slice(
-            std::fs::read_to_string(uri)
-                .into_diagnostic()
-                .context("Failed retrieving sub-schema")?
-                .as_bytes(),
-        )
-        .into_diagnostic()
-        .context("Failed deserializing sub-schema")
+        async {
+            serde_json::from_slice(
+                std::fs::read_to_string(uri)
+                    .into_diagnostic()
+                    .context("Failed retrieving sub-schema")?
+                    .as_bytes(),
+            )
+            .into_diagnostic()
+            .context("Failed deserializing sub-schema")
+        }
+        .await
     }
 }
 

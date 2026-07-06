@@ -8,13 +8,13 @@
 default_job = "clippy-all"
 
 [jobs.check]
-command = ["cargo", "check", "--color", "always"]
+command = ["cargo", "check", "--tests", "--color", "always"]
 need_stdout = false
 default_watch = false
 watch = ["src", "process", "recipe", "template", "utils", "Cargo.toml", "build.rs"]
 
 [jobs.check-all]
-command = ["cargo", "check", "--all-features", "--color", "always"]
+command = ["cargo", "check", "--all-features", "--tests", "--color", "always"]
 need_stdout = false
 default_watch = false
 watch = ["src", "process", "recipe", "template", "utils", "Cargo.toml", "build.rs"]
@@ -22,7 +22,7 @@ watch = ["src", "process", "recipe", "template", "utils", "Cargo.toml", "build.r
 [jobs.clippy]
 command = [
     "cargo", "clippy", "--workspace",
-    "--color", "always",
+    "--tests", "--color", "always",
 ]
 need_stdout = false
 default_watch = false
@@ -32,7 +32,7 @@ watch = ["src", "process", "recipe", "template", "utils", "Cargo.toml", "build.r
 command = [
     "cargo", "clippy", "--workspace",
     "--all-features",
-    "--color", "always",
+    "--tests", "--color", "always",
 ]
 need_stdout = false
 default_watch = false

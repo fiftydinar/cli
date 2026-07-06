@@ -23,7 +23,7 @@ use blue_build_utils::{
     semver::Version,
 };
 use bon::{Builder, bon};
-use cached::proc_macro::cached;
+use cached::cached;
 use clap::Args;
 use colored::Colorize;
 use indicatif::{ProgressBar, ProgressStyle};
@@ -267,7 +267,6 @@ impl Driver {
 }
 
 #[cached(
-    result = true,
     key = "String",
     convert = r#"{ oci_ref.to_string() }"#,
     sync_writes = "by_key"

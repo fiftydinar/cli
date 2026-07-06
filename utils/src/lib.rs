@@ -26,7 +26,7 @@ use blake2::{
     Blake2bVar,
     digest::{Update, VariableOutput},
 };
-use cached::proc_macro::once;
+use cached::once;
 use chrono::{Local, Utc};
 use log::{trace, warn};
 use miette::{Context, IntoDiagnostic, Result, miette};

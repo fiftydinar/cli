@@ -7,7 +7,7 @@ use std::{
 };
 
 use blue_build_utils::constants::{BLUE_BUILD_SCRIPTS_DIR_IGNORE, GITIGNORE_PATH};
-use cached::proc_macro::once;
+use cached::once;
 use miette::{Context, IntoDiagnostic, Result, miette};
 use rust_embed::Embed;
 
@@ -28,7 +28,7 @@ impl BuildScripts {
     /// Will error if the scripts cannot be extracted or the
     /// old scripts cannot be deleted.
     pub fn extract_mount_dir() -> Result<PathBuf> {
-        #[once(result = true)]
+        #[once]
         fn inner() -> Result<PathBuf> {
             update_gitignore()?;
             delete_old_dirs()?;

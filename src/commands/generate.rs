@@ -17,7 +17,7 @@ use blue_build_utils::{
     syntax_highlighting::{self, DefaultThemes},
 };
 use bon::Builder;
-use cached::proc_macro::cached;
+use cached::cached;
 use clap::Args;
 use colored::Colorize;
 use log::{debug, info, trace, warn};
@@ -210,11 +210,7 @@ impl GenerateCommand {
 /// - Unable to generate the base image reference
 pub fn generate_default_labels(recipe: &Recipe) -> Result<BTreeMap<String, String>> {
     // Use an inner cached function to hide clippy documentation errors
-    #[cached(
-        result = true,
-        key = "String",
-        convert = r"{ recipe.get_name().into() }"
-    )]
+    #[cached(key = "String", convert = r"{ recipe.get_name().into() }")]
     fn inner(recipe: &Recipe) -> Result<BTreeMap<String, String>> {
         trace!("Generate LABELS for recipe: ({})", recipe.get_name());
 

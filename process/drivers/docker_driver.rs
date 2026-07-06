@@ -14,7 +14,7 @@ use blue_build_utils::{
     semver::Version,
     string_vec, tempdir,
 };
-use cached::proc_macro::once;
+use cached::once;
 use colored::Colorize;
 use comlexr::{cmd, pipe};
 use log::{debug, info, trace, warn};
@@ -60,7 +60,7 @@ pub struct DockerDriver;
 
 impl DockerDriver {
     fn setup() -> Result<()> {
-        #[once(result = true, sync_writes = true)]
+        #[once(sync_writes = true)]
         fn exec() -> Result<()> {
             trace!("DockerDriver::setup()");
 
