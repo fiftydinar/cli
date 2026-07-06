@@ -19,12 +19,7 @@ pub enum BuildEngine {
 }
 
 #[derive(Debug, Clone, Template, Builder)]
-#[template(
-    path = "Containerfile.j2",
-    escape = "none",
-    whitespace = "minimize",
-    print = "code"
-)]
+#[template(path = "Containerfile.j2", escape = "none", whitespace = "minimize")]
 pub struct ContainerFileTemplate<'a> {
     #[builder(into)]
     recipe: &'a Recipe,
