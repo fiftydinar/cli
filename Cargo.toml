@@ -10,7 +10,7 @@ categories = ["command-line-utilities"]
 version = "0.9.36"
 
 [workspace.dependencies]
-bon = "=3.8.2"
+bon = "=3.9.3"
 cached = { version = "=2.0.2", features = ["async"]}
 chrono = "=0.4.43"
 clap = "=4.6.1"
