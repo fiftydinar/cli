@@ -211,7 +211,7 @@ pub trait BuildDriver: ImageStorageDriver {
                     .collect::<Vec<_>>();
 
                 for tag in opts.tags {
-                    debug!("Tagging {} with {tag}", &image);
+                    debug!("Tagging {image} with {tag}");
                     let tagged_image = Reference::with_tag(
                         image.registry().into(),
                         image.repository().into(),
@@ -580,7 +580,7 @@ pub trait BuildChunkedOciDriver: BuildDriver + ImageStorageDriver {
                     .collect::<Vec<_>>();
 
                 for tag in btp_opts.tags {
-                    debug!("Tagging {} with {tag}", &image);
+                    debug!("Tagging {image} with {tag}");
                     let tagged_image = Reference::with_tag(
                         image.registry().into(),
                         image.repository().into(),

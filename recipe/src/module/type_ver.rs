@@ -22,10 +22,10 @@ impl std::fmt::Display for ModuleTypeVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self.version.as_deref() {
             Some(version) => {
-                write!(f, "{}@{version}", &self.typ)
+                write!(f, "{}@{version}", self.typ)
             }
             None => {
-                write!(f, "{}", &self.typ)
+                write!(f, "{}", self.typ)
             }
         }
     }
